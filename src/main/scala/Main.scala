@@ -10,4 +10,11 @@ object Main extends App {
   )
 
   println(actividades)
+
+  // Obtiene las actividades por usuario y las retorna como una lista
+  def actividadesPorUsuario(usuario: String, actividades: List[Actividad]) : List[Actividad] = {
+    actividades.filter(_.usuario == usuario)
+  }
+
+  println(actividadesPorUsuario("Ana", actividades))
 }
