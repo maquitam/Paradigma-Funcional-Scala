@@ -9,12 +9,16 @@ object Main extends App {
     Actividad("Ana", "Ciclismo", 60, 500, "Martes")
   )
 
-  println(actividades)
-
   // Obtiene las actividades por usuario y las retorna como una lista
   def actividadesPorUsuario(usuario: String, actividades: List[Actividad]) : List[Actividad] = {
     actividades.filter(_.usuario == usuario)
   }
 
-  println(actividadesPorUsuario("Ana", actividades))
+  // Esta funcion obtiene las calorias del usuario y retorna el total de calorias por usuario
+  def totalCalorias(usuario: String, actividades: List[Actividad]) : Int = {
+    actividadesPorUsuario(usuario, actividades)
+      .map(_.calorias)
+      .sum
+  }
+
 }
