@@ -20,8 +20,11 @@ object Main extends App {
       .map(_.calorias)
       .sum
   }
-  //
+
+  // Devuelve el total del tiempo de ejercicio de un usuario en minutos
   def totalTiempo(usuario: String, actividades: List[Actividad]): Int = {
     actividadesPorUsuario(usuario, actividades)
+    .map(_.duracionMin)
+    .sum
   }
 }
