@@ -21,4 +21,8 @@ object Main extends App {
       .sum
   }
 
+  // Esta funcion obtiene la informacion de los usuarios, pasando por la lista de actividades (sujeto a cambio por la falta de funciones)
+  def reporteGeneral (actividades: list [Actividad]): String = {
+    val usuarios = actividades.map(_.usuario).distinct 
+    usuarios.map(usuario => reporteUsuario(usuario, actividades)).mkString("\n")
 }
