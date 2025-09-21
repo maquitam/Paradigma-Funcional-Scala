@@ -21,24 +21,8 @@ object Main extends App {
       .sum
   }
 
-
-  // Construye un reporte en formato texto para un usuario
-  def reporteUsuario(usuario: String, actividades: List[Actividad]): String = {
-    val cantidad = actividadesPorUsuario(usuario, actividades).length
-    val totalCal = totalCalorias(usuario, actividades)
-    val totalMin = totalTiempo(usuario, actividades)
-
-    s""""
-    Usuario: $usuario
-    Actividades realizadas: $cantidad
-    Calorías quemadas: $totalCal
-    Tiempo total ejercitado: $totalMin min
-    """
-  }
-
   // Esta funcion obtiene la informacion de los usuarios, pasando por la lista de actividades (sujeto a cambio por la falta de funciones)
-  def reporteGeneral (actividades: List[Actividad]): String = {
+  def reporteGeneral (actividades: list [Actividad]): String = {
     val usuarios = actividades.map(_.usuario).distinct 
     usuarios.map(usuario => reporteUsuario(usuario, actividades)).mkString("\n")
-  }
 }
