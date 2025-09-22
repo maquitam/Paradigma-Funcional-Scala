@@ -20,6 +20,13 @@ object Main extends App {
       .map(_.calorias)
       .sum
   }
+  
+// Devuelve el total del tiempo de ejercicio de un usuario en minutos
+  def totalTiempo(usuario: String, actividades: List[Actividad]): Int = {
+    actividadesPorUsuario(usuario, actividades)
+    .map(_.duracionMin)
+    .sum
+  }
 
   // Construye un reporte en formato texto para un usuario
   def reporteUsuario(usuario: String, actividades: List[Actividad]): String = {
